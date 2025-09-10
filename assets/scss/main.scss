@@ -1,0 +1,23 @@
+// 1. Zmienne globalne
+@use 'base/variables' as *;
+
+// 2. Funkcje i mixiny
+@use 'utils/functions';
+@use 'utils/mixins';
+
+// 3. Reset i typografia
+@use 'base/reset';
+@use 'base/fonts';
+@use 'base/typography';
+
+// 4. Layout
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/sections';
+@use 'layout/hero';
+
+// 5. Komponenty UI
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/portfolio';
+

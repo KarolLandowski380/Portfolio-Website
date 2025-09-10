@@ -1,0 +1,18 @@
+@use '../base/variables' as *;
+
+a.btn {
+	padding: 20px;
+    background-color: $color-accent-alt;
+    color: $color-bg-alt;
+    width: fit-content;
+    border: 2px solid $color-accent-alt;
+    font-weight: 700;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin-top: 1.6rem;
+    &:hover {
+        background-color: transparent;
+        color: $color-accent-alt;
+    }
+}

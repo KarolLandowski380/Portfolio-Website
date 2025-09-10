@@ -1,0 +1,34 @@
+@use "../base/variables" as *;
+
+section {
+  max-width: calc($container-width + 4rem);
+  margin: 0px auto;
+  padding: 0px 4rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  @media (max-width: 1440px) {
+  }
+}
+
+.lines_wrapper {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: calc($container-width + 4rem);
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: -1;
+  padding: 0 2rem;
+
+  .line {
+    width: 1px;
+    height: 100%;
+    background-color: $color-accent-alt;
+    opacity: 0.1;
+  }
+}

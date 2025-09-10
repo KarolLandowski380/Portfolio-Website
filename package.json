@@ -1,0 +1,1 @@
+npx sass assets/scss:assets/css --watch
