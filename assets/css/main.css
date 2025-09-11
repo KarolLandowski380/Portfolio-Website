@@ -1,3 +1,28 @@
+/* Flashlight effect following mouse cursor */
+.flashlight-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(100, 215, 255, 0.08) 0%, rgba(100, 215, 255, 0.04) 25%, rgba(100, 215, 255, 0.02) 50%, rgba(100, 215, 255, 0.01) 75%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+@media (min-width: 769px) {
+  body.flashlight-active .flashlight-glow {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .flashlight-glow {
+    display: none;
+  }
+}
+/* END */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -75,11 +100,28 @@ h6 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 5rem;
+}
+@media (max-width: 767px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2.75rem;
+  }
 }
 
 h2 {
-  font-size: 3.2rem;
+  font-size: 5rem;
+  margin-bottom: 3.2rem;
+}
+@media (max-width: 767px) {
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 1.6rem;
+  }
 }
 
 h3 {
@@ -142,12 +184,22 @@ header .container a.logo {
   font-size: 4.5rem;
   padding-left: 1.5rem;
 }
+@media (max-width: 767px) {
+  header .container a.logo {
+    font-size: 3.5rem;
+  }
+}
 header .container nav ul {
   display: flex;
   list-style: none;
   gap: 4rem;
   margin: 0px;
   padding: 0px;
+}
+@media (max-width: 900px) {
+  header .container nav ul {
+    display: none;
+  }
 }
 header .container nav ul a {
   font-size: 2.5rem;
@@ -162,10 +214,17 @@ header .container nav ul a small {
   padding-right: 0.75rem;
 }
 
+footer {
+  text-align: center;
+  max-width: 300px;
+  margin: 0px auto;
+  margin-top: -100px;
+}
+
 section {
   max-width: calc(1440px + 4rem);
   margin: 0px auto;
-  padding: 0px 4rem;
+  padding: 5rem 4rem;
   height: auto;
   display: flex;
   align-items: center;
@@ -200,10 +259,40 @@ section {
   max-width: 80rem;
 }
 .hero h1 {
-  max-width: 500px;
+  max-width: 800px;
 }
 .hero p {
   max-width: 500px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+}
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .projects-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.technologies-wrapper {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+}
+@media (max-width: 767px) {
+  .technologies-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 a.btn {
@@ -221,6 +310,87 @@ a.btn {
 a.btn:hover {
   background-color: transparent;
   color: #4dfcd6;
+}
+
+.project-card {
+  min-height: 275px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+  padding: 1.5rem;
+  border: 1px solid transparent;
+}
+.project-card:hover {
+  background: rgba(2, 0, 31, 0.25);
+  border: 1px solid rgba(77, 252, 214, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.project-card h3 {
+  font-size: 3rem;
+}
+.project-card h4 {
+  font-size: 1.8rem;
+}
+.project-card small {
+  margin-bottom: 1.6rem;
+  font-size: 1.2rem;
+}
+.project-card a {
+  margin-top: auto;
+}
+
+.socials-wrapper {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: fixed;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(2, 0, 31, 0.25);
+  border: 1px solid rgba(77, 252, 214, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 2rem 1rem;
+  border-left: none;
+}
+@media (max-width: 1024px) {
+  .socials-wrapper {
+    top: unset;
+    bottom: 0px;
+    left: 50%;
+    padding: 1rem 5rem;
+    transform: translateY(0%) translateX(-50%);
+    flex-direction: row;
+    justify-content: center;
+    border-left: 1px solid rgba(77, 252, 214, 0.1);
+  }
+}
+.socials-wrapper svg {
+  display: flex;
+  width: 35px;
+  height: auto;
+  transition: 0.3s;
+}
+.socials-wrapper svg:hover {
+  opacity: 0.7;
+}
+@media (max-width: 1530px) {
+  .socials-wrapper svg {
+    width: 25px;
+  }
+}
+@media (max-width: 1024px) {
+  .socials-wrapper svg {
+    width: 35px;
+    min-width: 30px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,13 @@
+@use "../base/variables" as *;
+
+
+.technologies-wrapper {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

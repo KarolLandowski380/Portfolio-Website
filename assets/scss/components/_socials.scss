@@ -1,0 +1,51 @@
+@use '../base/variables' as *;
+
+.socials-wrapper {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: fixed;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(2, 0, 31, 0.25);
+    border: 1px solid rgba(77, 252, 214, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 2rem 1rem;
+    border-left: none;
+
+    @media (max-width: 1024px) {
+        top: unset;
+        bottom: 0px;
+        left: 50%;
+        padding: 1rem 5rem;
+        transform: translateY(0%) translateX(-50%);
+        flex-direction: row;
+        justify-content: center;
+        border-left: 1px solid rgba(77, 252, 214, 0.1);
+
+    }
+
+    svg {
+        display: flex;
+        width: 35px;
+        height: auto;
+        transition: 0.3s;
+        &:hover {
+            opacity: 0.7;
+        }
+        @media (max-width: 1530px) {
+            width: 25px;
+        }
+
+        @media (max-width: 1024px) {
+            width: 35px;
+            min-width: 30px;
+        }
+    }
+}

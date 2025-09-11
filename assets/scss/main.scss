@@ -15,9 +15,10 @@
 @use 'layout/footer';
 @use 'layout/sections';
 @use 'layout/hero';
+@use 'layout/portfolio';
+@use 'layout/technologies';
 
 // 5. Komponenty UI
 @use 'components/buttons';
 @use 'components/cards';
-@use 'components/portfolio';
-
+@use 'components/socials';

@@ -1,0 +1,35 @@
+/* Flashlight effect following mouse cursor */
+
+.flashlight-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        circle,
+        rgba(100, 215, 255, 0.08) 0%,
+        rgba(100, 215, 255, 0.04) 25%,
+        rgba(100, 215, 255, 0.02) 50%,
+        rgba(100, 215, 255, 0.01) 75%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+@media (min-width: 769px) {
+    body.flashlight-active .flashlight-glow {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .flashlight-glow {
+        display: none;
+    }
+}
+
+/* END */
