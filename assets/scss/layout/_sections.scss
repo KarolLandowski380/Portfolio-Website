@@ -9,8 +9,15 @@ section {
   align-items: center;
   @media (max-width: 1440px) {
   }
+  &#kontakt {
+    justify-content: center;
+  }
 }
-
+.container {
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
 .lines_wrapper {
   position: fixed;
   top: 0;

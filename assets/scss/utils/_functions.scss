@@ -1,3 +1,5 @@
+@use '../base/variables' as *;
+
 /* Flashlight effect following mouse cursor */
 
 .flashlight-glow {
@@ -8,14 +10,12 @@
     pointer-events: none;
     z-index: 1000;
     transform: translate(-50%, -50%);
-    background: radial-gradient(
-        circle,
-        rgba(100, 215, 255, 0.08) 0%,
-        rgba(100, 215, 255, 0.04) 25%,
-        rgba(100, 215, 255, 0.02) 50%,
-        rgba(100, 215, 255, 0.01) 75%,
-        transparent 100%
-    );
+    background: radial-gradient(circle,
+            rgba(100, 215, 255, 0.08) 0%,
+            rgba(100, 215, 255, 0.04) 25%,
+            rgba(100, 215, 255, 0.02) 50%,
+            rgba(100, 215, 255, 0.01) 75%,
+            transparent 100%);
     opacity: 0;
     transition: opacity 0.5s ease;
 }
@@ -32,4 +32,69 @@
     }
 }
 
-/* END */
+/* Smooth scroll and offsets */
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 50px;
+}
+
+/* CF form */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
+    @media (max-width: 767px) {
+        width: 100%;
+        padding-bottom: 50px;
+    }
+
+    >div {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+
+    label {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        text-transform: uppercase;
+        gap: 10px;
+
+        input, textarea {
+            padding: 10px;
+            border: 2px solid $color-heading;
+            background-color: $color-bg;
+            color: white;
+            &::placeholder {
+                color: gray;
+            }
+        }
+
+        textarea {
+            min-height: 200px;
+            width: 100%;
+        }
+    }
+
+    button {
+        @media (max-width: 767px) {
+            width: 100% !important;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
