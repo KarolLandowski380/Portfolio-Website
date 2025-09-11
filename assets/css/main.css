@@ -299,6 +299,26 @@ section {
 section#kontakt {
   justify-content: center;
 }
+section#kontakt .container {
+  display: flex;
+  gap: 500px;
+  width: 100%;
+  align-items: center;
+}
+@media (max-width: 1250px) {
+  section#kontakt .container {
+    gap: 50px;
+  }
+}
+@media (max-width: 767px) {
+  section#kontakt .container {
+    flex-direction: column-reverse;
+    gap: 25px;
+  }
+}
+section#kontakt .container .contact-form, section#kontakt .container .contact-details {
+  width: 100%;
+}
 
 @media (max-width: 767px) {
   .container {

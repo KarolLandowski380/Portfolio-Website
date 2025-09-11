@@ -11,6 +11,22 @@ section {
   }
   &#kontakt {
     justify-content: center;
+    .container {
+      display: flex;
+      gap: 500px;
+      width: 100%;
+      align-items: center;
+      @media (max-width:1250px) {
+        gap: 50px;
+      }
+      @media (max-width: 767px) {
+        flex-direction: column-reverse;
+        gap: 25px;
+      }
+      .contact-form, .contact-details {
+        width: 100%;
+      }
+    }
   }
 }
 .container {
